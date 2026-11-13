@@ -37,7 +37,7 @@ func _ready():
 	await get_tree().process_frame
 	if input.is_multiplayer_authority():
 		camera.current = true
-		ExampleRollbackFPS.HUD.set_player(self)
+		ExampleSimulatedFPS.HUD.set_player(self)
 
 func _before_tick_loop():
 	_ackd_deaths = deaths

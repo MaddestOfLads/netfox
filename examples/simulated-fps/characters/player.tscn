@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://o8k7tanaofl1"]
+[gd_scene load_steps=7 format=3 uid="uid://o8k7tanaofl1"]
 
 [ext_resource type="Script" path="res://examples/simulated-fps/scripts/player.gd" id="1_jbdri"]
 [ext_resource type="Script" path="res://examples/simulated-fps/scripts/player-input.gd" id="2_2ow4a"]
+[ext_resource type="Script" path="res://addons/netfox/simulator.gd" id="3_q08qc"]
+[ext_resource type="Script" path="res://addons/netfox/input-sender.gd" id="4_nwuv4"]
+[ext_resource type="Script" path="res://addons/netfox/tick-interpolator.gd" id="5_lec1i"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ockbr"]
 
@@ -22,3 +25,19 @@ script = ExtResource("2_2ow4a")
 
 [node name="DisplayNameLabel3D" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="Simulator" type="Node" parent="." node_paths=PackedStringArray("root")]
+script = ExtResource("3_q08qc")
+root = NodePath("..")
+state_properties = Array[String]([":transform", "Head:transform"])
+
+[node name="InputSender" type="Node" parent="." node_paths=PackedStringArray("root")]
+script = ExtResource("4_nwuv4")
+root = NodePath("..")
+input_properties = Array[String](["Input:mouse_rotation", "Input:look_angle", "Input:movement", "Input:fire", "Input:jump"])
+
+[node name="Hit SFX" type="AudioStreamPlayer3D" parent="."]
+
+[node name="TickInterpolator" type="Node" parent="." node_paths=PackedStringArray("root")]
+script = ExtResource("5_lec1i")
+root = NodePath("..")

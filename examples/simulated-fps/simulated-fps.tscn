@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://examples/simulated-fps/scripts/player-spawner.gd" id="1_r84uj"]
 [ext_resource type="PackedScene" uid="uid://o8k7tanaofl1" path="res://examples/simulated-fps/characters/player.tscn" id="2_2wpgu"]
-[ext_resource type="PackedScene" uid="uid://cdue87s0gmc4d" path="res://examples/rollback-fps/ui/fps-hud.tscn" id="3_v7k5s"]
 [ext_resource type="PackedScene" uid="uid://badtpsxn5lago" path="res://examples/shared/ui/network-popup.tscn" id="4_tags3"]
+[ext_resource type="PackedScene" uid="uid://dkntu3gbt2fgm" path="res://examples/simulated-fps/ui/fps-hud.tscn" id="5_bfjmv"]
 [ext_resource type="Script" path="res://examples/shared/scripts/simple-time-display.gd" id="5_oj1d5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_m76yx"]
@@ -62,10 +62,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="fps-hud" parent="UI" instance=ExtResource("3_v7k5s")]
-visible = false
-layout_mode = 1
-
 [node name="Network Popup" parent="UI" instance=ExtResource("4_tags3")]
 layout_mode = 1
 
@@ -74,6 +70,9 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 script = ExtResource("5_oj1d5")
+
+[node name="fps-hud" parent="UI" instance=ExtResource("5_bfjmv")]
+layout_mode = 1
 
 [node name="Map" type="Node" parent="."]
 
