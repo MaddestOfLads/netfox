@@ -37,6 +37,8 @@ NetworkIdentityServer="*res://addons/netfox/servers/network-identity-server.gd"
 NetworkCommandServer="*res://addons/netfox/servers/network-command-server.gd"
 RollbackLivenessServer="*res://addons/netfox/servers/rollback-liveness-server.gd"
 InterpolationServer="*res://addons/netfox/servers/interpolation-server.gd"
+InputSenderServer="*res://addons/netfox/servers/input-sender-server.gd"
+SimulatorServer="*res://addons/netfox/servers/simulator-server.gd"
 
 [display]
 

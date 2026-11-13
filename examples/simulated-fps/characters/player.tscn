@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://o8k7tanaofl1"]
+
+[ext_resource type="Script" path="res://examples/simulated-fps/scripts/player.gd" id="1_jbdri"]
+[ext_resource type="Script" path="res://examples/simulated-fps/scripts/player-input.gd" id="2_2ow4a"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ockbr"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_jbdri")
+
+[node name="MovementCollisionShape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_ockbr")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+
+[node name="Input" type="Node" parent="."]
+script = ExtResource("2_2ow4a")
+
+[node name="DisplayNameLabel3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
